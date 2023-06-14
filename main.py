@@ -29,12 +29,14 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("***")
+
 col1, col2 = st.columns(2)
 
 # First button
-if col1.button("Click here to start the quiz"):
+if col1.button("Start Quiz"):
     switch_page("Quiz")       
 
 # Second button
-if col2.button("Click here for prediction"):
+if col2.button("Start Prediction"):
     switch_page("Model")
