@@ -3,7 +3,12 @@ from PIL import Image
 import tensorflow as tf
 import numpy as np
 
-loaded_model = tf.keras.models.load_model("model.tf")
+@st.cache_resource  # Allow the model to be mutated and cached
+def load_model():
+    return tf.keras.models.load_model("model.tf")
+
+# Load the model
+loaded_model = load_model()
 
 # Function to preprocess the image
 def preprocess_image(image):
